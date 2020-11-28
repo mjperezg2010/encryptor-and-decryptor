@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppserviceService } from '../appservice.service';
+
 
 @Component({
   selector: 'app-principal',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  actualList:String[]=[]
+  actualUser:String
+
+  constructor(public appService:AppserviceService) { }
 
   ngOnInit(): void {
+
   }
 
 }
