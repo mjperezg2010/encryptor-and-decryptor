@@ -12,6 +12,11 @@
           </ul>
     </div>
 
+    <div *ngIf="auth.user$ | async as user">
+        {{user.email}}
+    </div>
+
+
 
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { AppserviceService } from '../appservice.service';
 
 
@@ -12,7 +13,7 @@ export class PrincipalComponent implements OnInit {
   actualList:String[]=[]
   actualUser:String
 
-  constructor(public appService:AppserviceService) { }
+  constructor(public appService:AppserviceService,public auth:AuthService) { }
 
   ngOnInit(): void {
     this.actualList=this.appService.getList()

@@ -12,9 +12,8 @@ import {AuthService} from '@auth0/auth0-angular'
           <button (click)="auth.loginWithRedirect()">Log In</button>
         </ng-template>
 
-        <ul *ngIf="auth.user$ | async as user">
-          <li>{{user.email}}</li>
-        </ul>
+       
+        <button (click)="show()">Button</button>
   
   
   `,
@@ -24,6 +23,13 @@ export class AuthButtonComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   ngOnInit(): void {
+   
+    
+  }
+
+  show(){
+    
+    console.log(this.auth.user$)
   }
 
 }
