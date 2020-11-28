@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Text} from './classes/text'
+import {AuthService} from '@auth0/auth0-angular'
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +19,23 @@ export class AppserviceService {
     }
   ]
 
+  //Actual Text
+  actualText = this.list[0]
+
   constructor() { }
 
   //Functions
   getList(){
-    return this.list
+    return this.actualText.texts
+
+  }
+
+  getUser(){
+    return this.actualText.user
+  }
+
+  setUser(){
     
   }
+
 }

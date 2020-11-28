@@ -15,7 +15,7 @@ export class PrincipalComponent implements OnInit {
   constructor(public appService:AppserviceService) { }
 
   ngOnInit(): void {
-
+    this.actualList=this.appService.getList()
   }
 
 }
