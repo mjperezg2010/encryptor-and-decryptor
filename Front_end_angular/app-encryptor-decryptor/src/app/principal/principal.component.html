@@ -1,4 +1,4 @@
-<div>
+<div class="background">
     <div class="textocentral">
         <nav class="navbar navbar-light bg-dark">
             <h1 class="text-white" routerLink="/principal">Encryptro/Decryptor</h1>
@@ -14,11 +14,25 @@
     </div>
 
     <div class="container">
-        
+        <div class="row">
+            <div class="col col-lg-9">
+                <h2 class="text-white"><br>Encryptor</h2>
+                <form>
+                    <div class="form-group">
+                        <label for = "textArea1"><h4 class="text-white"><br>Original Text</h4></label>
+                        <textarea class="form-control" id="textArea1" rows="8" placeholder="Enter Text Here."></textarea>
+                        <button type="submit" class="btn btn-dark mb-2">Cypher Text</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+
+
+
         <ul *ngFor="let element of actualList">
             <li>{{element}}</li>
         </ul>
-
         {{setActualUser()}}
     </div>
 
