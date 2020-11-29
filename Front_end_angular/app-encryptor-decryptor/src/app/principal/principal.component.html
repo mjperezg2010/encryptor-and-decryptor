@@ -21,12 +21,12 @@
                     <div class="form-group">
                         <label for = "textArea1"><h4 class="text-white"><br>Original Text</h4></label>
                         <textarea class="form-control" id="textArea1" rows="8" placeholder="Enter Text Here." [(ngModel)]="originalText" [ngModelOptions]="{standalone:true}"></textarea>
-                        <button type="submit" class="btn btn-dark mb-2">Encrypt Text</button>
+                        <button type="submit" class="btn btn-dark mb-2" (click)="encryptingText()">Encrypt Text</button>
                     </div>
                     <div class="form-group">
                         <label for="textarea2"><h4 class="text-white"><br>Decrypted Text</h4></label>
                         <textarea  [(ngModel)]="encrypText" [ngModelOptions]="{standalone:true}" class="form-control" id="textarea2" rows="8" placeholder="Enter text here." ></textarea>
-                        <button type="submit" class="btn btn-dark mb-2">Decryp Text</button>
+                        <button type="submit" class="btn btn-dark mb-2" (click)="decryptingText()">Decryp Text</button>
                     </div>
                 </form>
             </div>

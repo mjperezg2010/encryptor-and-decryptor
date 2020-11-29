@@ -44,7 +44,7 @@ export class PrincipalComponent implements OnInit {
     this.appService.getList().push(this.originalText)
   }
 
-  cypherText(){
+  encryptingText(){
     var s = this.originalText;
     var chr, i = 0, l = s.length, out = '';
     for( ; i < l; i ++ ){
@@ -54,5 +54,15 @@ export class PrincipalComponent implements OnInit {
     }
     this.encrypText=out
     
+  }
+
+  decryptingText(){
+    var s = this.encrypText;
+    var i = 0, l = s.length, chr, out = '';
+    for( ; i < l; i += 8 ){
+        chr = parseInt( s.substr( i, 8 ), 2 ).toString( 16 );
+        out += '%' + ( ( chr.length % 2 == 0 ) ? chr : '0' + chr );
+    }
+    this.originalText= decodeURIComponent( out );
   }
 }
