@@ -21,11 +21,29 @@
                     <div class="form-group">
                         <label for = "textArea1"><h4 class="text-white"><br>Original Text</h4></label>
                         <textarea class="form-control" id="textArea1" rows="8" placeholder="Enter Text Here."></textarea>
-                        <button type="submit" class="btn btn-dark mb-2">Cypher Text</button>
+                        <button type="submit" class="btn btn-dark mb-2">Encrypt Text</button>
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="textarea2"><h4 class="text-white"><br>Decrypted Text</h4></label>
+                        <textarea class="form-control" id="textarea2" rows="8" placeholder="Enter text here."></textarea>
+                        <button type="submit" class="btn btn-dark mb-2">Decryp Text</button>
+                    </div>
                 </form>
             </div>
+            
+            <div class="col-md-auto">
+                <h4 class="text-white"><br>Favorites</h4>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-dark mb-2">Save Text</button>|
+                <button type="submit" class="btn btn-dark mb-2">Delete Seleted</button>
+                <ul class="list-group" *ngFor="let element of actualList">
+                    <li class="list-group-item active">Example</li>
+                    <li class="list-group-item list-group.item.action list-group-item-dark">{{element}}</li>
+                </ul>
+                {{setActualUser()}}
+            </div>
+
         </div>
 
 
