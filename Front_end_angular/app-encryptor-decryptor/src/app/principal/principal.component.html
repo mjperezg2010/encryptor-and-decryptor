@@ -6,15 +6,23 @@
         </nav>
     </div>
     
-    <div class="container">
-          <ul *ngFor="let element of actualList">
-              <li>{{element}}</li>
-          </ul>
-    </div>
+    
 
     <div *ngIf="auth.user$ | async as user">
-        {{user.email}}
+        {{this.appService.setUser(user.email)}}
+        
     </div>
+
+    <div class="container">
+        
+        <ul *ngFor="let element of actualList">
+            <li>{{element}}</li>
+        </ul>
+
+        {{setActualUser()}}
+    </div>
+
+    
 
 
 

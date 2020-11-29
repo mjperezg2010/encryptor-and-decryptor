@@ -12,8 +12,6 @@ import {AuthService} from '@auth0/auth0-angular'
           <button (click)="auth.loginWithRedirect()">Log In</button>
         </ng-template>
 
-       
-        <button (click)="show()">Button</button>
   
   
   `,
@@ -25,11 +23,6 @@ export class AuthButtonComponent implements OnInit {
   ngOnInit(): void {
    
     
-  }
-
-  show(){
-    
-    console.log(this.auth.user$)
   }
 
 }

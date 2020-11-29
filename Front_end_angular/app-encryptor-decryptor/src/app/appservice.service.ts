@@ -20,12 +20,16 @@ export class AppserviceService {
   ]
 
   //Actual Text
-  actualText = this.list[0]
+  actualText:Text = {
+    user: '',
+    texts: []
+  }
 
   constructor() { }
 
   //Functions
   getList(){
+    
     return this.actualText.texts
 
   }
@@ -34,7 +38,18 @@ export class AppserviceService {
     return this.actualText.user
   }
 
-  setUser(){
+  setUser(mail:String){
+   
+    for (let i = 0; i < this.list.length; i++) {
+      
+      if (mail == this.list[i].user) {
+        this.actualText=this.list[i]
+        break
+      }
+      
+      
+    }
+
     
   }
 

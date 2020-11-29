@@ -17,6 +17,11 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit(): void {
     this.actualList=this.appService.getList()
+    
   }
-
+  setActualUser(){
+    //console.log(text)
+    this.actualUser=this.appService.getUser()
+    this.actualList=this.appService.getList()
+  }
 }
