@@ -12,6 +12,8 @@ export class PrincipalComponent implements OnInit {
 
   actualList:String[]=[]
   actualUser:String
+  selected:String
+  originalText:String=""
 
   constructor(public appService:AppserviceService,public auth:AuthService) { }
 
@@ -23,5 +25,16 @@ export class PrincipalComponent implements OnInit {
     //console.log(text)
     this.actualUser=this.appService.getUser()
     this.actualList=this.appService.getList()
+  }
+
+  clickFavorite(text:String){
+    this.selected=text
+
+  }
+
+  deleteFavorite(){
+    var text= this.selected
+    var index = this.appService.getList().indexOf(text)
+    delete this.appService.getList()[index]
   }
 }

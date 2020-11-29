@@ -1,7 +1,7 @@
 <div class="background">
     <div class="textocentral">
         <nav class="navbar navbar-light bg-dark">
-            <h1 class="text-white" routerLink="/principal">Encryptro/Decryptor</h1>
+            <h1 class="text-white" routerLink="/principal">Encryptor/Decryptor</h1>
             <app-auth-button></app-auth-button>
         </nav>
     </div>
@@ -20,12 +20,12 @@
                 <form>
                     <div class="form-group">
                         <label for = "textArea1"><h4 class="text-white"><br>Original Text</h4></label>
-                        <textarea class="form-control" id="textArea1" rows="8" placeholder="Enter Text Here."></textarea>
+                        <textarea class="form-control" id="textArea1" rows="8" placeholder="Enter Text Here." [(ngModel)]="originalText" [ngModelOptions]="{standalone:true}"></textarea>
                         <button type="submit" class="btn btn-dark mb-2">Encrypt Text</button>
                     </div>
                     <div class="form-group">
                         <label for="textarea2"><h4 class="text-white"><br>Decrypted Text</h4></label>
-                        <textarea class="form-control" id="textarea2" rows="8" placeholder="Enter text here."></textarea>
+                        <textarea  [(ngModel)]="originalText" [ngModelOptions]="{standalone:true}" class="form-control" id="textarea2" rows="8" placeholder="Enter text here." ></textarea>
                         <button type="submit" class="btn btn-dark mb-2">Decryp Text</button>
                     </div>
                 </form>
@@ -37,8 +37,8 @@
                 <br>
                 <button type="submit" class="btn btn-dark mb-2">Save Text</button>|
                 <button type="submit" class="btn btn-dark mb-2">Delete Seleted</button>
+                <ul><li class="list-group-item active">Example</li></ul>
                 <ul class="list-group" *ngFor="let element of actualList">
-                    <li class="list-group-item active">Example</li>
                     <li class="list-group-item list-group.item.action list-group-item-dark">{{element}}</li>
                 </ul>
                 {{setActualUser()}}
@@ -48,10 +48,6 @@
 
 
 
-        <ul *ngFor="let element of actualList">
-            <li>{{element}}</li>
-        </ul>
-        {{setActualUser()}}
     </div>
 
     
